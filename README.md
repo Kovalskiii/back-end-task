@@ -10,8 +10,7 @@ From the IDE terminal:
 
 http://localhost:8000/
 
-3)Database
-
+3)Database - PostgreSQL 
    
 4)Postman collection and environment is located in docs/postman. Import files in Postman.
 
