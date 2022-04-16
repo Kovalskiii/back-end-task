@@ -1,5 +1,19 @@
 # back-end-task
 # Blogging
+
+### Requirements:
+
+1. RESTfull web service working with JSON data in node.js using express and postgresql
+2. two types of **users**: **bloggers** and **admins**
+3. authentication with name/email and password, with sign-up and sign-in for **bloggers**, but only sign-in for **admins**
+4. **bloggers** can create **posts**
+5. **bloggers** can update and remove their **posts**
+6. **bloggers** can publish and hide their **posts**
+7. **bloggers** can see their **posts** whether they're public or hidden
+8. **bloggers** can see **posts** of other **bloggers** as long as they're public
+9. **admins** can do everything **bloggers** can do
+10. **admins** can remove any public **post**
+
 Install Node.js (last stable version) https://nodejs.org/en/ 
 
 From the IDE terminal:
