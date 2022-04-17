@@ -90,3 +90,4 @@ const userModel = sequelizeClient.define('User', {
 });
 
 export default userModel;
+

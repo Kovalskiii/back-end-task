@@ -12,7 +12,7 @@ export const sequelizeClient = new Sequelize( {
 export const queryInterface = sequelizeClient.getQueryInterface();
 
 export default async function postgresConnection() {
-  sequelizeClient.sync()
-    .then(result => console.log('Database connection has been established successfully.'))
+  await sequelizeClient.sync()
+    .then(() => console.log('Database connection has been established successfully.'))
     .catch(err => console.log('Unable to connect to the database:', err));
 }
