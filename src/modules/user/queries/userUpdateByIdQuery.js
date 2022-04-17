@@ -1,9 +1,9 @@
 import userModel from '../userModel.js';
 import message from '../../utils/messages.js';
 
-const userUpdateByIdQuery = ({ userId, values }) => {
+const userUpdateByIdQuery = async ({ userId, values }) => {
 
-  return userModel.update(values, { where: { id: userId }})
+  return await userModel.update(values, { where: { id: userId }})
     .then((doc) => {
       if (doc) {
         return message.success('Success. User updated');

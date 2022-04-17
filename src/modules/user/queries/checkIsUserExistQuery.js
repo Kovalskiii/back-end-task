@@ -1,4 +1,4 @@
-import userModel from "../userModel.js";
+import userModel from '../userModel.js';
 
 export function checkIsUserExistQuery(email) {
   return userModel.findOne({ where : { email: email }})
