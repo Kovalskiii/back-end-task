@@ -102,7 +102,281 @@
 		},
 		{
 			"name": "Post",
-			"item": []
+			"item": [
+				{
+					"name": "Post Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"title\": \"New title\",\n        \"content\": \"Some content is here\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						},
+						"description": "Due to this request we can create new post"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Delete By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/delete/65caa146-9e2d-42c9-9f0d-ba8a1fd60d35",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"delete",
+								"65caa146-9e2d-42c9-9f0d-ba8a1fd60d35"
+							]
+						},
+						"description": "Due to this request we can delete post by its id"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Update By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"title\": \"New title2\",\n        \"content\": \"Some content is here2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/update/65caa146-9e2d-42c9-9f0d-ba8a1fd60d35",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"update",
+								"65caa146-9e2d-42c9-9f0d-ba8a1fd60d35"
+							]
+						},
+						"description": "Due to this request we can update post by it's Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Change Visibility",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"isHidden\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/update/visibility/65caa146-9e2d-42c9-9f0d-ba8a1fd60d35",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"update",
+								"visibility",
+								"65caa146-9e2d-42c9-9f0d-ba8a1fd60d35"
+							]
+						},
+						"description": "Due to this request we can change post vosibility(public or hidden) by post Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/get/65caa146-9e2d-42c9-9f0d-ba8a1fd60d35",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"get",
+								"65caa146-9e2d-42c9-9f0d-ba8a1fd60d35"
+							]
+						},
+						"description": "Due to this request we can get post by it's id"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Get All By User Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/getAll/by/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"getAll",
+								"by",
+								"user"
+							]
+						},
+						"description": "Due to this request we can get all posts which belong to the user (current logged user)"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Get All Public",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/getAll/public",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"getAll",
+								"public"
+							]
+						},
+						"description": "Due to this request we can get all public posts."
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
